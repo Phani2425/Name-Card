@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Card</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="script.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+         *{ 
+        Margin:0;
+        Padding:0;
+        Box-sizing: border-box;
+        Font-family: Roboto;
+        transition: all 0,0.15s;
+        }
+        
+        html,body{
+        Width:100%;
+        Height:100%;
+        }
+        h1{
+            font-size: 1.5rem;
+            line-height: 1rem;
+            font-weight: 600;
+        }
+        button{
+            font-size: small;
+            font-weight: 500;
+        }
+        .red-circle{
+            animation-name: red-one;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both;
+        }
+
+        @keyframes red-one {
+            0%{
+                transform: translateX(0px);
+            }
+            50%{
+                transform: translateX(-30px);
+            }
+            100%{
+                transform: translateX(0px);
+            }
+        }
+
+        .blue-circle{
+            animation-name: blue-one;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both; 
+        }
+        @keyframes blue-one {
+            0%{
+                transform: translateX(0px);
+            }
+            50%{
+                transform: translateX(40px);
+            }
+            100%{
+                transform: translateX(0px);
+            }
+        }
+    </style>
+</head>
+<body class="relative">
+    <div class="wrapper relative bg-black w-[100vw] h-[100vh] text-white flex justify-center items-center ">
+        <div class="red-circle absolute top-20 left-[500px] bg-rose-600 h-40 w-40 rounded-full shadow-rose-500 shadow-[5px_5px_30px]"></div>
+        <div class="blue-circle absolute right-[470px] top-[490px]  bg-indigo-600 shadow-indigo-500 shadow-[5px_5px_30px] h-48 w-48 rounded-full"></div>
+        <div class="flex flex-col justify-center items-center gap-12 bg-slate-700 bg-opacity-40 backdrop-blur-md py-10 px-6 rounded-lg border border-slate-600 z-10">
+            <img class="h-36 w-36 rounded-full" src="388261.jpg" alt="">
+            <h1>Phani Bhusan Mohanty</h1>
+            <h3 class="font-semibold text-slate-400">Student, CUTM</h3>
+            <div class="flex gap-2 " >
+                <button id="share" class="flex justify-between items-center gap-3 hover:bg-white hover:text-black px-[12px] py-[8px] border border-white rounded-md cursor-pointer font-semibold">
+                    <i class="fa-solid fa-share"></i>
+                    Share My Profile
+                </button>
+                <button class="hover:bg-white hover:text-black px-[42px] py-[8px] border border-white rounded-md cursor-pointer font-semibold">Follow Me</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal -->
+     <div class="mod-wrapper flex justify-center items-center absolute top-0 w-[100vw] h-[100vh]  text-white">
+        <div class=" modal scale-0 z-30 transition-all duration-500 ease-in-out backdrop-blur-md">
+            <div class=" bg-slate-950 bg-opacity-40 px-5 py-5 flex flex-col justify-between items-start gap-[24px] w-[450px] border rounded-lg border-">
+                <div class="flex justify-between items-center w-full font-bold text-[25px]" >
+                    <h1>Share My Profile</h1>
+                    <i id="x-mark" class="fa-solid fa-xmark cursor-pointer"></i>
+                </div>
+                <hr class="to-white h-[1px] w-full">
+                <h4 class="text-[18px] font-semibold" id="share">Share this via</h4>
+                <div class="flex justify-between items-center w-full text-[20px]">
+                    <a class="text-[#0165E1] border-2 border-[#0165E1] p-2 rounded-full h-11 w-11 text-center" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a class="text-[#1D9BF0] border-2 border-[#1D9BF0] p-2 rounded-full h-11 w-11 text-center" href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a class="text-[#405DE6] border-2 border-[#405DE6] p-2 rounded-full h-11 w-11 text-center" href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a class="text-[#28D146]
+                    border-2 border-[#28D146] p-2 h-11 w-11 text-center rounded-full" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a class="text-[#27A7E7] border-2 border-[#27A7E7] p-2 rounded-full h-11 w-11 text-center" href="#"><i class="fa-brands fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+     </div>
+
+     <div class="overlay h-[100vh] w-[100vw] absolute top-0 bg-slate-400 opacity-35 scale-0 z-20 cursor-pointer backdrop-blur-md"></div>
+
+
+    <script src="https://kit.fontawesome.com/1e1c980066.js" crossorigin="anonymous"></script>
+</body>
+</html>
